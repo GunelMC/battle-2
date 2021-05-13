@@ -1,8 +1,7 @@
-# frozen_string_literal: true
-
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'rack'
+require 'player'
 
 class Battle < Sinatra::Base
   configure :development do
@@ -16,8 +15,8 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_1] = params[:player_1_name]
-    session[:player_2] = params[:player_2_name]
+    $player_1_name = Player.new(params[:player_1_name])
+     $player_2_name = Player.new(params[:player_2_name])
     redirect '/play'
   end
 
