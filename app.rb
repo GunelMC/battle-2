@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'rack'
-require 'player'
+require_relative './lib/player'
 
 class Battle < Sinatra::Base
   configure :development do
@@ -21,14 +21,12 @@ class Battle < Sinatra::Base
   end
 
  get '/play' do
-    @player_1_name = session[:player_1]
-    @player_2_name = session[:player_2]
+    @player_1_name = $player_1_name.name
+    @player_2_name = $player_2_name.name
     erb :play
   end
 
  get '/attack' do
-  @player_1_name = session[:player_1]
-  @player_2_name = session[:player_2]
   erb :attack
  end 
 end
