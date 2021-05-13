@@ -8,8 +8,10 @@ let(:player_2) { double :player_2 }
 
   describe '#attack' do
   it 'player hp drops' do
-    expect(game.player_2).to receive(:attack)
+
+    allow(game.player_2).to receive(:points).and_return(120)
     game.attack(player_2)
+    expect { game.player_2.points }.to change_by(-10)
     end 
   end
 

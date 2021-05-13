@@ -13,7 +13,7 @@ class Game
   end
 
   def attack(player)
-    player.attack
+    player.points -= 10
   end
 
 end
