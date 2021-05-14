@@ -18,5 +18,9 @@ describe Player do
     it 'reduces player points'do
       expect { becca.receive_damage }.to change { becca.points }.by(-10)
     end
+
+    it 'reduces player points'do
+      expect { john.receive_damage }.to change { john.points }.by(-10)
+    end
   end 
 end

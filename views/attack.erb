@@ -1,6 +1,17 @@
+<% if @game.current_turn == @game.player_1 %>
 <%= (@game.player_1.name).capitalize%> attacked <%=(@game.player_2.name).capitalize%>
+<%else%>
+<%= (@game.player_2.name).capitalize%> attacked <%=(@game.player_1.name).capitalize%>
+<%end%>
+
+<br>
+<%="#{(@game.player_1.name).capitalize}: #{@game.player_1.points}HP"%>
+<br>
+
 <br>
 <%="#{(@game.player_2.name).capitalize}: #{@game.player_2.points}HP"%>
 <br>
 
-<a href='/play'>OK</a>
+<form action = '/switch-turn' method ="post">
+<input type = "submit" value = "OK">
+</form>

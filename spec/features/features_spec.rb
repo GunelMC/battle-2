@@ -11,9 +11,15 @@ feature 'Reduce HP points' do
   end
 
   feature 'Player has HP points' do
+
     scenario "see Player 2's hit points" do
       enter_name_and_play
       expect(page).to have_content('Becca: 120HP')
     end
+
+      scenario "see Player 1's hit points" do
+        enter_name_and_play
+        expect(page).to have_content('John: 120HP')
+      end
   end 
 end

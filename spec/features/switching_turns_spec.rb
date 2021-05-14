@@ -12,7 +12,7 @@ feature 'Switch turns' do
   scenario 'switching turns' do
     enter_name_and_play
     click_button("Attack")
-    click_link('OK')
+    click_button('OK')
     expect(page).to have_content("Becca's turn")
   end
 end 
