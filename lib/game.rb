@@ -12,8 +12,8 @@ class Game
     @players.last
   end
 
-  def attack(player)
-    player.points -= 10
-  end
+  # def attack(player)
+  #   player.points -= 10
+  # end
 
 end
