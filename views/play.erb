@@ -1,6 +1,11 @@
-<h1><%="#{@game.player_1.name} vs #{@game.player_2.name}"%></h1>
+<h1><%="#{(@game.player_1.name).capitalize} vs #{(@game.player_2.name).capitalize}"%></h1>
 
-<%="#{@game.player_2.name}: #{@game.player_2.points}HP"%>
+<%="#{(@game.player_2.name).capitalize}: #{@game.player_2.points}HP"%>
+
+<br>
+<%= @game.current_turn.name %>'s turn
+
+<br>
 
 <form action="/attack">
   <input type="submit" value="Attack">
